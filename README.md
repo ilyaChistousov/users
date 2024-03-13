@@ -7,7 +7,7 @@ docker-compose up -d --build
 ```
 docker-compose exec app composer install
 ```
-### Using
+### Usage
 1) From console:
 ```
 docker-compose exec app php/app/public.php -method -param
