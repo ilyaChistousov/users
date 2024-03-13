@@ -9,7 +9,8 @@ class DBConnection
     private PDO $pdo;
     private static $instance;
 
-    public static function getInstance(): static {
+    public static function getInstance(): static
+    {
         if (static::$instance === null) {
             static::$instance = new DBConnection();
         }
@@ -23,7 +24,7 @@ class DBConnection
         $user = 'user';
         $password = 'password';
 
-        try{
+        try {
             $this->pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
         } catch (\PDOException $e) {
             echo 'Error: ' . $e->getMessage();

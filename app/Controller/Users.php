@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Db\DbParody;
 use App\Db\UsersDB;
 use Exception;
 
@@ -10,8 +9,8 @@ class Users
 {
     public function __construct(
         private UsersDB $usersDB
-    )
-    {}
+    ) {
+    }
 
     public function all(): void
     {

@@ -6,11 +6,10 @@ use Exception;
 
 class UrlParser
 {
-
     public static function parse(string $url, string $requestMethod)
     {
         $method = explode('/', $url);
-        if (count($method) > 3 ) {
+        if (count($method) > 3) {
             throw new Exception('Bad url');
         }
         if ($requestMethod === 'POST') {

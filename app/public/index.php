@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+
 use App\Controller\Users;
 use App\Db\DbParody;
 use App\Db\UsersDBImpl;
@@ -31,7 +32,7 @@ if(php_sapi_name() == 'cli') {
     try {
         $methodWithParam = UrlParser::parse($url, $requestMethod);
         match ($methodWithParam['method']) {
-            'all'=> $users->all(),
+            'all' => $users->all(),
             'getOne' => $users->getOne($methodWithParam['param']),
             'create' => $users->create($methodWithParam['param']),
             'delete' => $users->delete($methodWithParam['param']),
