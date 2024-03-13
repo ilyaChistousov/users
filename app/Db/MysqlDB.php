@@ -4,7 +4,7 @@ namespace App\Db;
 
 use Exception;
 
-class UsersDBImpl implements UsersDB
+class MysqlDB implements UserDB
 {
     private DBConnection $db;
     public function __construct()

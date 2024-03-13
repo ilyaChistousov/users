@@ -4,7 +4,7 @@ namespace App\Db;
 
 use Exception;
 
-class DbParody implements UsersDB
+class JsonDB implements UserDB
 {
     private array $data;
     private int $id = 0;

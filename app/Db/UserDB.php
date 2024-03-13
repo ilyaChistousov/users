@@ -2,7 +2,7 @@
 
 namespace App\Db;
 
-interface UsersDB
+interface UserDB
 {
     public function all(): array;
     public function getOne(int $id): array;

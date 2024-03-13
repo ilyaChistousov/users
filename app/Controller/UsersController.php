@@ -2,13 +2,13 @@
 
 namespace App\Controller;
 
-use App\Db\UsersDB;
+use App\Db\UserDB;
 use Exception;
 
-class Users
+class UsersController
 {
     public function __construct(
-        private UsersDB $usersDB
+        private UserDB $usersDB
     ) {
     }
 

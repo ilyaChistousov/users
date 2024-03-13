@@ -2,9 +2,9 @@
 
 namespace App;
 
-use App\Controller\Users;
-use App\Db\DbParody;
-use App\Db\UsersDBImpl;
+use App\Controller\UsersController;
+use App\Db\JsonDB;
+use App\Db\MysqlDB;
 use App\Utils\UrlParser;
 use Exception;
 
@@ -12,11 +12,11 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 $env = parse_ini_file(__DIR__ . '/../../.env');
 $db = match ($env['DB_TYPE']) {
-    'mysql' => new UsersDBImpl(),
-    'json' => new DbParody(),
+    'mysql' => new MysqlDB(),
+    'json' => new JsonDB(),
     default => throw new Exception('Unknown db type'),
 };
-$users = new Users($db);
+$users = new UsersController($db);
 
 if(php_sapi_name() == 'cli') {
     $method = $argv[1];
